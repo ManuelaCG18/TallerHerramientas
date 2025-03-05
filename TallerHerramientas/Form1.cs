@@ -78,6 +78,12 @@ namespace TallerHerramientas
                     MessageBox.Show("El promedio debe estar entre 0 y 10");
                     return;
                 }
+
+                if(estudiantes.Any(est => est.Nombre.Equals(nombre, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("Ya existe un estudiante con ese nombre");
+                    return;
+                }
             }
             catch { }
         }
